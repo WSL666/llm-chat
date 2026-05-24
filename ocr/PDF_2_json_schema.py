@@ -3,7 +3,7 @@ import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="sk-shfqhdbcuxzypfbflegaanvlocyprefmneqcfikqvgwezsrw",
+    api_key="sk-xxxx",
     base_url="https://api.siliconflow.cn/v1"
 )
 

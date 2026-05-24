@@ -4,7 +4,7 @@ import math
 
 API_URL = "https://api.siliconflow.cn/v1/embeddings"
 HEADERS = {
-    "Authorization": "Bearer sk-fheemcmucmbmyllrobngdxxkqumzjbsrpecfkqgzvpzkvnxj",
+    "Authorization": "Bearer xxxx",
     "Content-Type": "application/json"
 }
 

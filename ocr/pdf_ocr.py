@@ -6,7 +6,7 @@ import fitz  # pymupdf
 from openai import OpenAI
 
 #  模型配置 
-API_KEY  = "sk-lueuazgpxpfwuvnpkfkzblkuwyphhipriylxruociasmkiln"
+API_KEY  = "sk-xxxx"
 BASE_URL = "https://api.siliconflow.cn/v1"
 MODEL    = "deepseek-ai/DeepSeek-OCR"
 MAX_TOKENS = 4096   # 每页输出的最大 token 数
