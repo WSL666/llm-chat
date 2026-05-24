@@ -1,0 +1,34 @@
+{
+  "job_info": {
+    "company": "",
+    "title": "大模型Agent算法专家"
+  },
+  "skills": [
+    "Multi-Agent",
+    "LangChain",
+    "AutoGen",
+    "Dify",
+    "Prompt Engineering",
+    "RAG",
+    "Fine-tuning",
+    "Python",
+    "PyTorch",
+    "Transformer",
+    "LLM",
+    "Coze",
+    "ReAct",
+    "Plan-and-Execute",
+    "NLP",
+    "Chain-of-Thought",
+    "Multi-step Reasoning",
+    "AutoGPT",
+    "MetaGPT",
+    "CrewAI"
+  ],
+  "workplace": "北京-海淀",
+  "education": [
+    "本科",
+    "硕士",
+    "博士"
+  ]
+}

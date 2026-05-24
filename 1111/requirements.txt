@@ -1,0 +1,14 @@
+-i https://mirrors.aliyun.com/pypi/simple
+fastapi
+pydantic
+pydantic-settings
+loguru
+websocket-client==1.8.0
+pillow
+jinja2
+requests
+boto3
+minio
+uvicorn
+backoff
+aiohttp

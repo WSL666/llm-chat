@@ -1,0 +1,210 @@
+version: '3'
+
+services:
+  comfyui-nginx:
+    image: nginx:1.19.1-alpine
+    container_name: comfyui-nginx
+    networks:
+      - comfyui-cluster
+    ports:
+      - "5020:80"
+    volumes:
+      - ./nginx1.19.1/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - comfyui-replicas1
+
+  comfyui-replicas1:
+    image: reg-pub.meicloud.com/app/aigctools/python/comfyui:v2
+    container_name: comfyui-replicas1
+    networks:
+      - comfyui-cluster
+    environment:
+      - TZ=Asia/Shanghai
+    working_dir: /workspace/ComfyUI
+    volumes:
+      - ./ComfyUI:/workspace/ComfyUI
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python main.py --listen 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 0          # 0 不按数量，而是按具体 ID
+              device_ids: [ '0' ] # 对应 CLI 的 device=1
+              capabilities: [ gpu ]
+
+  comfyui-replicas2:
+    image: reg-pub.meicloud.com/app/aigctools/python/comfyui:v2
+    container_name: comfyui-replicas2
+    networks:
+      - comfyui-cluster
+    environment:
+      - TZ=Asia/Shanghai
+    working_dir: /workspace/ComfyUI
+    volumes:
+      - ./ComfyUI:/workspace/ComfyUI
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python main.py --listen 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 0          # 0 不按数量，而是按具体 ID
+              device_ids: [ '1' ] # 对应 CLI 的 device=1
+              capabilities: [ gpu ]
+
+  comfyui-replicas3:
+    image: reg-pub.meicloud.com/app/aigctools/python/comfyui:v2
+    container_name: comfyui-replicas3
+    networks:
+      - comfyui-cluster
+    environment:
+      - TZ=Asia/Shanghai
+    working_dir: /workspace/ComfyUI
+    volumes:
+      - ./ComfyUI:/workspace/ComfyUI
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python main.py --listen 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 0          # 0 不按数量，而是按具体 ID
+              device_ids: [ '2' ] # 对应 CLI 的 device=1
+              capabilities: [ gpu ]
+
+  comfyui-replicas4:
+    image: reg-pub.meicloud.com/app/aigctools/python/comfyui:v2
+    container_name: comfyui-replicas4
+    networks:
+      - comfyui-cluster
+    environment:
+      - TZ=Asia/Shanghai
+    working_dir: /workspace/ComfyUI
+    volumes:
+      - ./ComfyUI:/workspace/ComfyUI
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python main.py --listen 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 0          # 0 不按数量，而是按具体 ID
+              device_ids: [ '3' ] # 对应 CLI 的 device=1
+              capabilities: [ gpu ]
+
+  comfyui-replicas5:
+    image: reg-pub.meicloud.com/app/aigctools/python/comfyui:v2
+    container_name: comfyui-replicas5
+    networks:
+      - comfyui-cluster
+    environment:
+      - TZ=Asia/Shanghai
+    working_dir: /workspace/ComfyUI
+    volumes:
+      - ./ComfyUI:/workspace/ComfyUI
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python main.py --listen 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 0          # 0 不按数量，而是按具体 ID
+              device_ids: [ '4' ] # 对应 CLI 的 device=1
+              capabilities: [ gpu ]
+
+  comfyui-replicas6:
+    image: reg-pub.meicloud.com/app/aigctools/python/comfyui:v2
+    container_name: comfyui-replicas6
+    networks:
+      - comfyui-cluster
+    environment:
+      - TZ=Asia/Shanghai
+    working_dir: /workspace/ComfyUI
+    volumes:
+      - ./ComfyUI:/workspace/ComfyUI
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python main.py --listen 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 0          # 0 不按数量，而是按具体 ID
+              device_ids: [ '5' ] # 对应 CLI 的 device=1
+              capabilities: [ gpu ]
+
+  comfyui-replicas7:
+    image: reg-pub.meicloud.com/app/aigctools/python/comfyui:v2
+    container_name: comfyui-replicas7
+    networks:
+      - comfyui-cluster
+    environment:
+      - TZ=Asia/Shanghai
+    working_dir: /workspace/ComfyUI
+    volumes:
+      - ./ComfyUI:/workspace/ComfyUI
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python main.py --listen 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 0          # 0 不按数量，而是按具体 ID
+              device_ids: [ '6' ] # 对应 CLI 的 device=1
+              capabilities: [ gpu ]
+
+  comfyui-replicas8:
+    image: reg-pub.meicloud.com/app/aigctools/python/comfyui:v2
+    container_name: comfyui-replicas8
+    networks:
+      - comfyui-cluster
+    environment:
+      - TZ=Asia/Shanghai
+    working_dir: /workspace/ComfyUI
+    volumes:
+      - ./ComfyUI:/workspace/ComfyUI
+    command:
+      - /bin/sh
+      - -c
+      - |
+        python main.py --listen 0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 0          # 0 不按数量，而是按具体 ID
+              device_ids: [ '7' ] # 对应 CLI 的 device=1
+              capabilities: [ gpu ]
+
+networks:
+  comfyui-cluster:
+    external: true
